@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAT-3 Inhibitor Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .how-it-works {
+            margin-top: 30px;
+        }
+
+        .how-it-works h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .how-it-works p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>STAT-3 Inhibitor Prediction</h1>
+
+    <p>Enter the SMILES representation of a molecule and get a prediction whether the molecule can act as a STAT-3 Inhibitor or Not</p>
+
+    <form action="/home/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Predict">
+
+        {% if prediction %}
+            <p>STAT-3 Inhibitor Prediction: <b>{{ prediction }}</b></p>
+        {% endif %}
+
+    </form>
+
+    <p>Models used:
+        <ul>
+            <li>Neural Network</li>
+            <li>Logistic Regression</li>
+            <li>Support Vector</li>
+        </ul>
+    </p>
+
+    <div class="how-it-works">
+        <h2>How It Works</h2>
+        <p><a href="https://github.com/Jayadithya374/EC422-Project/blob/main/code.ipynb">EC422-Project</a>
+            <br>
+            Used the models- Neural Network, Logistic Regression, SVM to predict.
+            <br>
+            Built with django, tensorflow, scikit-learn, RDKit, Bootstrap.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
