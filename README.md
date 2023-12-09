@@ -1,4 +1,4 @@
-# ml-django
+# stat3-web
 
 Web Interface to predict STAT3 inhibitors
 
