@@ -13,8 +13,17 @@ See: <a href="https://github.com/Jayadithya374/EC422-Project">EC422 Project</a>
    ```
 2. Run the application
 
+   Migrate
+
    ```
    $ cd modeldeploy
+   $ python3.9 manage.py makemigrations
+   $ python3.9 manage.py migrate
+   ```
+   
+   Run server
+   
+   ```
    $ python3.9 manage.py runserver
    ```
    You can then view the application by typing `localhost:8000` in your browser.
